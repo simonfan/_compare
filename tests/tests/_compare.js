@@ -1,4 +1,4 @@
-define(['_filters'], function(undef) {
+define(['_compare'], function(undef) {
 
 return function() {
 	
@@ -22,9 +22,31 @@ return function() {
 		var notBananaNorApple = _.notIn(['banana','apple']);
 
 		ok(notBananaNorApple('avocado'));
+
 		ok(!notBananaNorApple(['pineapple','banana']));
 
 		ok(!notBananaNorApple('apple'))
+	});
+
+
+	test('_.contains(values)', function() {
+		// contains bananas and apples
+		var containsBananasAndApples = _.contains(['banana','apple'])
+
+		ok(containsBananasAndApples(['avocado','banana','apple']));
+
+		ok(!containsBananasAndApples(['banana','avocado']));
+
+	});
+
+
+	test('_.containsAny(values)', function() {
+		// contains bananas or apples
+		var containsBananasOrApples = _.containsAny(['banana','apple']);
+
+
+		ok(containsBananasOrApples(['avocado','banana']));
+		ok(!containsBananasOrApples(['avocado','pineapple']))
 	})
 
 }

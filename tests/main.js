@@ -8,7 +8,7 @@ require.config({
 		'backbone': 'components/backbone/backbone',
 
 		// the module files go here
-		'_filters': '../_filters',
+		'_compare': '../_compare',
 
 		// DEMO
 		'demo-main': 'demo',	// the main file for the demo
@@ -17,7 +17,7 @@ require.config({
 		'tests-main': 'tests',	// the main file for tests
 
 		// other tests go here
-		'_filters-tests': 'tests/_filters',
+		'_compare-tests': 'tests/_compare',
 	},
 	shim: {
 		'backbone': {
