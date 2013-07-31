@@ -61,45 +61,34 @@ define(['underscore'], function(undef) {
 
 	_.mixin({
 		/* contains All */
-		contains: function(values) {
+		contains: function(container, values) {
 			if (_.isArray(values)) {
-				return function(container) {
-					// container array contains values
-					return aCa(container, values);
-				}
-
+				// container array contains values
+				return aCa(container, values);
 			} else {
-				return function(container) {
-					// container array contains single value
-					return aCv(container, values);
-				}
+				// container array contains single value
+				return aCv(container, values);
 			}
 		},
 
-		containsAny: function(values) {
+		containsAny: function(container, values) {
 			// values must be array to make sense.
 			values = _.isArray(values) ? values : [values];
 
-			return function(container) {
-				// container array contains any of the values
-				return _.find(values, function(val) {
+			// container array contains any of the values
+			return _.find(values, function(val) {
 
-					return aCv(container, val);
+				return aCv(container, val);
 
-				})
-			}
+			})
 		},
 
-		in: function(container) {
-			return function(values) {
-				return (_.isArray(values)) ? aINa(values, container) : vINa(values, container);
-			}
+		in: function(container, values) {
+			return (_.isArray(values)) ? aINa(values, container) : vINa(values, container);
 		},
 
-		notIn: function(container) {
-			return function(values) {
-				return (_.isArray(values)) ? aNINa(values, container) : vNINa(values, container);
-			}
+		notIn: function(container, values) {
+			return (_.isArray(values)) ? aNINa(values, container) : vNINa(values, container);
 		},
 
 		higherThan: function(limit) {
