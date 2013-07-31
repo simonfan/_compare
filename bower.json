@@ -1,0 +1,10 @@
+{
+  "name": "_filters",
+  "version": "0.0.1",
+  "dependencies": {
+    "qunit": "*",
+    "underscore": "~1.5.1",
+    "requirejs": "~2.1.8"
+  },
+  "main": "_filters.js"
+}
