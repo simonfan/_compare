@@ -15,7 +15,10 @@ return function() {
 
 		ok(!_.in(['banana','apple'], ['apple','peach']));
 
-		ok(!_.in(['banana','apple'], ['banana','apple','orange']))
+		ok(!_.in(['banana','apple'], ['banana','apple','orange']));
+
+
+		ok(_.in(['banana','apple'], []), 'empty array is in')
 	});
 
 	test('_.notIn(arr)', function() {
@@ -33,6 +36,9 @@ return function() {
 		ok(_.contains(['avocado','banana','apple'], ['banana','apple']));
 
 		ok(!_.contains(['banana','apple'], ['banana','avocado']));
+
+
+		ok(_.contains(['banana','apple'], []), 'empty array is contained in any array');
 
 	});
 
